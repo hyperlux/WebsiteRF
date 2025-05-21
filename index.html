@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renaissance Factory</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Roboto:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="container nav-container">
+            <a href="#home" class="logo">
+                <img src="logo.png" alt="Renaissance Factory Logo">
+            </a>
+            <button class="hamburger" aria-label="Toggle navigation">☰</button>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#vision">Vision</a>
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#products">Products</a>
+                <a href="#community">Community</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <header id="home" class="hero">
+        <video autoplay muted loop playsinline>
+            <source src="herovid.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="overlay"></div>
+        <div class="hero-content">
+            <h1>Design What You Dream</h1>
+            <p>Turn your ideas into custom furniture, smart gadgets, and unique decor with Renaissance Factory.</p>
+            <a href="#contact" class="cta-button">Start Designing Now</a>
+        </div>
+    </header>
+
+    <section id="vision">
+        <div class="container fade-in">
+            <h2>From Our Micro-Factory</h2>
+            <p>From our Puducherry micro-factory, we craft your vision with precision and care.</p>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container fade-in">
+            <h2>Your Creative Partner</h2>
+            <p>At Renaissance Factory, we’re redefining manufacturing as a personal, creative act. Based in Alankuppam, Puducherry, our micro-factory transforms your ideas into reality with cutting-edge tech and a passion for craftsmanship. We’re not about mass production; we’re about you—your vision, your style, your story. From custom furniture to IoT gadgets, we make objects that matter, with a nod to sustainability through quality materials like wood and recycled plastics. Join us to create something extraordinary.</p>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="container fade-in">
+            <h2>From Sketch to Reality</h2>
+            <p>Our services make creation seamless:</p>
+            <ul>
+                <li>Custom Design: Upload a sketch or collaborate with our designers using easy CAD tools.</li>
+                <li>Prototyping: Test your idea with 3D-printed or CNC-milled models.</li>
+                <li>Production: Craft your product in our micro-factory with precision.</li>
+                <li>Global Delivery: Get your creation shipped anywhere, from Puducherry to Paris.</li>
+            </ul>
+            <p>Businesses can tap our consultancy for innovative manufacturing solutions, leveraging our expertise in 3D printing and IoT.</p>
+            <a href="#contact" class="cta-button">Explore Our Services</a>
+        </div>
+    </section>
+
+    <section id="products">
+        <div class="container fade-in">
+            <h2>Crafted for You</h2>
+            <p>Discover our customizable product lineup:</p>
+            <ul>
+                <li>Modular Furniture: Stackable shelves, foldable desks, and cabinets designed for your space.</li>
+                <li>Smart Gadgets: IoT-enabled lamps, sensors, and planters for a connected home.</li>
+                <li>Unique Decor: Sculpted wall art, carved coasters, and accents that add personal flair.</li>
+            </ul>
+            <div class="gallery">
+                <img src="https://via.placeholder.com/300?text=Modular+Shelf" alt="Modular Shelf">
+                <img src="https://via.placeholder.com/300?text=Smart+Lamp" alt="Smart Lamp">
+                <img src="https://via.placeholder.com/300?text=Wall+Art" alt="Wall Art">
+            </div>
+            <p>Every piece is tailored to your vision, crafted with quality materials for style and durability.</p>
+            <a href="#contact" class="cta-button">Browse Products</a>
+        </div>
+    </section>
+
+    <section id="community">
+        <div class="container fade-in">
+            <h2>Get Inspired</h2>
+            <p>Visit our Alankuppam hub to see your designs come to life. Our roof balcony showcases custom shelves, lamps, and decor, sparking ideas for your next project. Join occasional workshops to try 3D printing or learn design basics, and let your creativity soar. We’re here to inspire and empower you to dream bigger.</p>
+            <a href="#contact" class="cta-button">Plan Your Visit</a>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container fade-in">
+            <h2>Let’s Create Together</h2>
+            <p>Ready to design your dream piece? Upload your idea, browse our products, or visit us in Puducherry. Contact us to start your project or inquire about business partnerships.</p>
+            <p>Email: <a href="mailto:hello@renaissancefactory.space">hello@renaissancefactory.space</a></p>
+            <p>Address: Alankuppam, Puducherry, India</p>
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required aria-required="true">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required aria-required="true">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="4" required aria-required="true"></textarea>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="cta-button">Get in Touch</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Renaissance Factory Private Limited. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
