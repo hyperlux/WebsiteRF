@@ -1,9 +1,16 @@
 :root {
-    --primary-blue: #1e3a8a;
-    --accent-red: #dc2626;
-    --light-gray: #f3f4f6;
-    --dark-gray: #1f2937;
-    --white: #ffffff;
+    --primary-color: #6B9E7B; /* Darker Green */
+    --secondary-color: #D4C2AD; /* Light Beige */
+    --accent-color: #C87E64; /* Muted Terracotta */
+    --text-color: #3E4A59; /* Deep Blue-Gray */
+    --background-color: #F4F6F5; /* Off-White/Very Light Gray */
+    --white: #ffffff; /* Pure white for contrast if needed */
+
+    --font-header: 'Merriweather', serif;
+    --font-body: 'Lato', sans-serif;
+
+    --line-height-header: 1.3;
+    --line-height-body: 1.65;
 }
 
 * {
@@ -13,11 +20,13 @@
 }
 
 body {
-    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    background-color: var(--white);
-    color: var(--dark-gray);
-    line-height: 1.7;
+    font-family: var(--font-body);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: var(--line-height-body);
     scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased; /* Improves font rendering */
+    -moz-osx-font-smoothing: grayscale; /* Improves font rendering */
 }
 
 .container {
@@ -28,13 +37,13 @@ body {
 }
 
 nav {
-    background-color: var(--white);
-    color: var(--dark-gray);
+    background-color: var(--background-color); /* Use main background for minimalism */
+    color: var(--text-color);
     padding: 1rem 0;
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); /* Softer shadow */
 }
 
 .nav-container {
@@ -44,35 +53,36 @@ nav {
 }
 
 .logo img {
-    height: 80px; /* Increased size */
+    height: 60px; /* Adjusted size for a sleeker look */
     vertical-align: middle;
 }
 
 .nav-links {
     display: flex;
-    gap: 1.5rem;
+    gap: 1.5rem; /* Keep gap, or adjust for new font */
 }
 
 .nav-links a {
-    color: var(--dark-gray);
+    color: var(--text-color);
     text-decoration: none;
-    font-weight: 500;
+    font-family: var(--font-body); /* Ensure body font for nav links */
+    font-weight: 700; /* Bolder for clarity */
     padding: 0.5rem 1rem;
     border-radius: 0.25rem;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    transition: color 0.3s ease, background-color 0.3s ease;
 }
 
 .nav-links a:hover, .nav-links a.active {
-    background-color: var(--accent-red);
-    transform: translateY(-2px);
+    color: var(--primary-color); /* Use primary color for hover/active */
+    background-color: transparent; /* Remove background color on hover */
 }
 
 .hamburger {
     display: none;
-    font-size: 1.5rem;
+    font-size: 1.8rem; /* Slightly larger */
     background: none;
     border: none;
-    color: var(--white);
+    color: var(--text-color);
     cursor: pointer;
 }
 
@@ -87,7 +97,7 @@ nav {
     overflow: hidden;
 }
 
-.hero video {
+.hero-image {
     position: absolute;
     top: 0;
     left: 0;
@@ -103,8 +113,9 @@ nav {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.55); /* A bit more opaque overlay */
     z-index: -1;
+    background-blend-mode: multiply; /* Blend mode for better visual effect */
 }
 
 .hero-content {
@@ -115,59 +126,97 @@ nav {
 }
 
 .hero h1 {
-    font-family: 'Poppins', sans-serif;
-    font-size: 4rem;
+    font-family: var(--font-header); /* Updated font */
+    font-size: 3.5rem; /* Adjusted size */
     font-weight: 700;
     margin-bottom: 1.5rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /* Softer shadow */
     animation: fadeInDown 1s ease-out;
+    color: var(--white); /* Ensure hero text is white for contrast */
 }
 
 .hero p {
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.25rem;
-    margin-bottom: 2rem;
-    max-width: 700px;
+    font-family: var(--font-body); /* Updated font */
+    font-size: 1.25rem; /* Increased for better readability */
+    line-height: 1.7; /* Slightly increased line height */
+    letter-spacing: 0.02em; /* Added subtle letter spacing */
+    margin-bottom: 3rem; /* More space before CTA */
+    max-width: 700px; /* Slightly increased max-width */
     margin-left: auto;
     margin-right: auto;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4); /* Added a subtle text shadow */
     animation: fadeIn 1.2s ease-out;
+    color: var(--white); /* Ensure hero text is white */
 }
 
 .cta-button {
-    background-color: var(--accent-red);
+    background-color: var(--primary-color);
     color: var(--white);
-    padding: 1rem 2rem;
+    padding: 0.9rem 2.2rem; /* Adjusted padding */
     text-decoration: none;
-    border-radius: 0.5rem;
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.25rem;
-    font-weight: 600;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 0.3rem; /* Slightly less rounded */
+    font-family: var(--font-header); /* Use header font for impact */
+    font-size: 1.1rem;
+    font-weight: 700;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Softer shadow */
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    display: inline-block; /* Ensure proper spacing and shadow */
     animation: fadeInUp 1.4s ease-out;
+    border: none; /* Ensure no default border */
 }
 
 .cta-button:hover {
-    background-color: #b91c1c;
-    transform: translateY(-5px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    background-color: #5A8267; /* Darker shade of new primary for hover */
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Slightly more pronounced shadow on hover */
 }
 
 section {
-    padding: 4rem 0;
-    text-align: center;
-    border-bottom: 1px solid var(--light-gray);
+    padding: 5rem 0; /* Adjusted padding for ample white space */
+    text-align: center; /* Keep text-align center for sections, can be overridden locally */
+    /* border-bottom: 1px solid #e0e0e0; */ /* Removing border for cleaner look, can be added if needed */
 }
+
+/* Removing alternating background for a cleaner, more minimalist look */
+/* section:nth-of-type(even) {
+    background-color: var(--secondary-color);
+} */
 
 section:last-of-type {
     border-bottom: none;
 }
 
-h2 {
-    color: var(--primary-blue);
-    font-size: 2rem;
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-header);
+    color: var(--text-color); /* Default to text color, can be overridden */
+    font-weight: 700; /* Bold for main headers */
+    line-height: var(--line-height-header);
+    margin-bottom: 1rem; /* Consistent bottom margin */
+}
+
+h1 {
+    font-size: 2.8rem; /* Example size, adjust as needed */
     margin-bottom: 1.5rem;
-    font-weight: 600;
+    letter-spacing: -0.02em; /* Subtle refinement */
+}
+
+h2 {
+    font-size: 2.2rem; /* Example size */
+    margin-bottom: 1.25rem;
+    color: var(--text-color); /* Default to text-color, primary can be used for emphasis */
+    letter-spacing: -0.015em; /* Subtle refinement */
+}
+
+h3 {
+    font-size: 1.8rem; /* Example size */
+    letter-spacing: -0.01em; /* Subtle refinement */
+}
+
+p {
+    margin-bottom: 1rem;
+    max-width: 70ch; /* Improves readability */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 ul {
@@ -181,25 +230,81 @@ ul li {
     font-size: 1rem;
 }
 
+/* Styling for Core Pillars Section */
+.core-pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 2rem; /* Ample spacing */
+    margin-top: 2.5rem;
+    text-align: left; /* Align text to left within pillars */
+}
+
+.pillar-item {
+    background-color: var(--white); /* Subtle background for cards if desired */
+    padding: 1.5rem;
+    border-radius: 0.3rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05); /* Soft shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pillar-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.pillar-item h3 {
+    color: var(--primary-color); /* Use primary color for pillar titles */
+    margin-bottom: 0.75rem;
+}
+
+/* Styling for Product Gallery */
 .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
-    padding: 1rem 0;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Slightly larger minmax */
+    gap: 1.5rem; /* Adjusted gap */
+    padding: 2rem 0; /* More padding around gallery */
 }
 
 .gallery img {
     width: 100%;
-    height: 200px;
+    height: 220px; /* Adjusted height */
     object-fit: cover;
-    border-radius: 0.5rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    border-radius: 0.3rem; /* Consistent border radius */
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08); /* Softer shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .gallery img:hover {
-    transform: scale(1.05);
+    transform: scale(1.03); /* Slightly more subtle scale */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
 }
+
+/* Styling for New Possibilities List */
+.possibilities-list {
+    list-style: none; /* Already set, but ensure */
+    padding-left: 0; /* Remove default padding */
+    margin-top: 1.5rem;
+    text-align: left; /* Align list items to the left */
+    max-width: 800px; /* Constrain width for readability */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.possibilities-list li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #e8e8e8; /* Subtle separator */
+    font-size: 1.05rem; /* Slightly larger font */
+}
+
+.possibilities-list li:last-child {
+    border-bottom: none;
+}
+
+.possibilities-list strong {
+    color: var(--primary-color); /* Highlight the strong part with primary color */
+    font-weight: 700; /* Ensure it's bold */
+}
+
 
 #contact {
     background-color: var(--light-gray);
@@ -217,52 +322,52 @@ ul li {
     display: block;
     margin-bottom: 0.5rem;
     font-weight: 600;
-    color: var(--dark-gray);
+    color: var(--text-color);
 }
 
 .form-group input,
 .form-group textarea {
     width: 100%;
-    padding: 0.75rem;
-    border: 1px solid #d1d5db;
-    border-radius: 0.375rem;
+    padding: 0.85rem;
+    border: 1px solid #d1d5db; /* Adjusted border to be slightly more visible than #cccccc */
+    border-radius: 0.3rem;
     font-size: 1rem;
-    transition: border-color 0.3s ease;
+    font-family: var(--font-body);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    background-color: var(--white);
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: var(--primary-blue);
-    box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(168, 216, 185, 0.4); /* Slightly stronger focus ring */
 }
 
 .form-group textarea {
     resize: vertical;
-    min-height: 100px;
+    min-height: 120px;
 }
 
-.form-group button {
-    background-color: var(--primary-blue);
-    color: var(--white);
-    padding: 0.75rem 1.5rem;
-    border: none;
-    border-radius: 0.375rem;
-    cursor: pointer;
-    font-size: 1rem;
-    font-weight: 600;
-    transition: background-color 0.3s ease;
+/* Ensure form button uses .cta-button styles for consistency */
+#contact-form .cta-button {
+    width: 100%;
+    margin-top: 0.5rem;
+    /* cta-button styles are applied globally, this ensures width and margin if needed */
 }
 
-.form-group button:hover {
-    background-color: #1e40af;
-}
 
 footer {
-    background-color: var(--primary-blue);
-    color: var(--white);
+    background-color: var(--text-color);
+    color: var(--background-color);
     text-align: center;
-    padding: 2rem 0;
+    padding: 3rem 0;
+}
+
+footer p {
+    font-size: 0.9rem;
+    margin-bottom: 0;
+    font-family: var(--font-body);
 }
 
 /* Animations */
@@ -317,8 +422,19 @@ footer {
         top: 100%;
         left: 0;
         width: 100%;
-        background-color: var(--primary-blue);
-        padding: 1rem;
+        background-color: var(--background-color);
+        padding: 0.5rem 0; /* Reduced padding */
+        box-shadow: 0 3px 5px rgba(0,0,0,0.07);
+        border-top: 1px solid #e8e8e8; /* Slightly lighter border */
+    }
+
+    .nav-links a {
+        padding: 0.9rem 1.5rem; /* Adjusted padding for better touch targets */
+        border-bottom: 1px solid #e8e8e8;
+        text-align: center;
+    }
+    .nav-links a:last-child {
+        border-bottom: none;
     }
 
     .nav-links.active {
@@ -330,21 +446,33 @@ footer {
     }
 
     .hero {
-        height: 80vh;
+        height: auto;
+        min-height: 70vh; /* Adjusted min-height */
+        padding: 3rem 1rem; /* Adjusted padding */
     }
 
     .hero h1 {
-        font-size: 2.5rem;
+        font-size: 2.2rem; /* Responsive font size */
     }
 
     .hero p {
         font-size: 1rem;
+        margin-bottom: 2rem;
     }
 
     .cta-button {
-        padding: 0.75rem 1.5rem;
+        padding: 0.8rem 1.6rem;
         font-size: 1rem;
     }
+
+    section {
+        padding: 3.5rem 1rem; /* Adjusted section padding */
+    }
+
+    h1 { font-size: 2rem; } /* Base responsive H1 */
+    h2 { font-size: 1.7rem; } /* Base responsive H2 */
+    h3 { font-size: 1.4rem; } /* Base responsive H3 */
+
 
     .gallery {
         grid-template-columns: 1fr;
@@ -353,10 +481,20 @@ footer {
 
 @media (max-width: 480px) {
     .hero h1 {
-        font-size: 2rem;
+        font-size: 1.8rem; /* Further adjust for very small screens */
     }
 
     .hero p {
-        font-size: 0.875rem;
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
     }
+    
+    .cta-button {
+        padding: 0.7rem 1.4rem;
+        font-size: 0.9rem;
+    }
+
+    h1 { font-size: 1.7rem; }
+    h2 { font-size: 1.5rem; }
+    h3 { font-size: 1.2rem; }
 }
